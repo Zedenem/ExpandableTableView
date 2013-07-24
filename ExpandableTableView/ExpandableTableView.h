@@ -16,6 +16,7 @@
 - (ExpandableSectionHeader *)expandableTableView:(ExpandableTableView *)expandableTableView viewForHeaderInSection:(NSInteger)section;
 
 - (void)expandableTableView:(ExpandableTableView *)expandableTableView sectionTapped:(NSInteger)section;
+- (BOOL)expandableTableView:(ExpandableTableView *)expandableTableView sectionExpandedByDefault:(NSInteger)section;
 
 - (NSArray *)expandableTableView:(ExpandableTableView *)expandableTableView expandableRowsForSection:(NSInteger)section;
 

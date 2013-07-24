@@ -78,6 +78,9 @@
 }
 - (void)expandableTableView:(ExpandableTableView *)expandableTableView sectionTapped:(NSInteger)section {
 }
+- (BOOL)expandableTableView:(ExpandableTableView *)expandableTableView sectionExpandedByDefault:(NSInteger)section {
+	return YES;
+}
 - (NSArray *)expandableTableView:(ExpandableTableView *)expandableTableView expandableRowsForSection:(NSInteger)section {
 	NSMutableArray *expandableRows = [NSMutableArray array];
 	for (int i = 0; i < kNumberOfRowsInSection(section); i++) {

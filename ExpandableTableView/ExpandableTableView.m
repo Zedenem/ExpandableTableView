@@ -32,6 +32,8 @@
 	[_expandedSections release];
 	[super dealloc];
 }
+
+#pragma mark Data Reloading
 - (void)reloadData {
 	[self setExpandedSections:nil];
 	[super reloadData];
@@ -55,7 +57,10 @@
 	if (!_expandedSections) {
 		_expandedSections = [[NSMutableArray alloc] init];
 		for (int i = 0; i < [self numberOfSections]; i++) {
-			[_expandedSections addObject:[NSNumber numberWithInt:i]];
+			if ([self.delegate respondsToSelector:@selector(expandableTableView:sectionExpandedByDefault:)]
+				&& [self.delegate expandableTableView:self sectionExpandedByDefault:i]) {
+				[_expandedSections addObject:[NSNumber numberWithInt:i]];
+			}
 		}
 	}
 	return _expandedSections;
